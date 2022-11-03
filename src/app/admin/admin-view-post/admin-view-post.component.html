@@ -1,0 +1,77 @@
+<div class="container" *ngIf="post">
+  <br /><br />
+  <h1>View Blog</h1>
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Id</label>
+      <input
+        type="text"
+        class="form-control"
+        name="id"
+        [(ngModel)]="post.id"
+        readonly
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        [(ngModel)]="post.title"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Content</label>
+      <textarea class="form-control" name="content" [(ngModel)]="post.content">
+      </textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Featured Image Url</label>
+      <input
+        class="form-control"
+        name="imgUrl"
+        [(ngModel)]="post.featuredImageUrl"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Author</label>
+      <input class="form-control" name="Author" [(ngModel)]="post.author" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">UrlHandle</label>
+      <input
+        class="form-control"
+        name="urlHandle"
+        [(ngModel)]="post.urlHandle"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Publish Date</label>
+      <input
+        class="form-control"
+        name="publishDate"
+        [(ngModel)]="post.publishDate"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Updated Date</label>
+      <input
+        class="form-control"
+        name="updatedDate"
+        [(ngModel)]="post.updatedDate"
+      />
+    </div>
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        name="IsVisible"
+        [(ngModel)]="post.isVisible"
+      />
+      <label class="form-check-label" for="IsVisible">Visible</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<!-- (click)="onSubmit()" -->

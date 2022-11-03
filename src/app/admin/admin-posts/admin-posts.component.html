@@ -1,1 +1,25 @@
-<p>admin-posts works!</p>
+<div class="container">
+  <br />
+  <h1>Blog Posts</h1>
+  <br />
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.title }}</td>
+        <td>
+          <a
+            [routerLink]="['/admin/posts', post.id]"
+            RouterLinkActive="router-link-active"
+            >View</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
